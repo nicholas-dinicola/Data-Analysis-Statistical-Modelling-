@@ -1,0 +1,206 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# **INDIVIDUAL ASSIGNMENT - _NICHOLAS DI NICOLA_**"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "#### Write the code in a Jupyter notebook to solve the exercise. \n",
+    "#### Submit your notebook converted to PDF at the link above by the indicated deadline. \n",
+    "#### This is a graded exercise that will count towards your final grade.\n",
+    " \n",
+    "#### Write the code that:\n",
+    "\n",
+    "#### 1. Reads the contents of \"aston.txt\" (please see the attachment)\n",
+    "\n",
+    "#### 2. Finds all unique words from the file, that is, a list of all words that appeared at least once in the text. \n",
+    "#### For example, in \"This is a cat and this is a dog\", the unique words are: \"this\", \"is\", \"a\", \"cat\", \"and\", \"dog\". \n",
+    "\n",
+    "#### 3. Prints them to a file called \"unique_words.txt\", sorted alphabetically\n",
+    "\n",
+    "#### 4. Finds the longest word in the file and prints it to the screen\n",
+    "\n",
+    "#### Please use comments to specify what each line of your code does. Each line must be commented!\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 6,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Aston University\n",
+      "\n",
+      "Aston University is a public research university situated in the city centre of Birmingham, England. Aston began as the Birmingham Municipal Technical School in 1895, evolving into the UK's first College of Advanced Technology in 1956.[5] Aston University received its royal charter from Queen Elizabeth II on 22 April 1966.\n",
+      "\n",
+      "In 2017, Aston received recognition Times Higher Education for the second best teaching quality in the UK.[6] For 2018, it was ranked in the top 55 universities in the UK by all major domestic and international league tables. Aston was ranked by QS as the 42nd best university in the world under 50 years old in 2015.\n",
+      "\n",
+      "Aston pioneered the integrated placement year concept over 50 years ago,[7][8][9] with more than 70% of Aston students taking a placement year, the highest percentage in the UK.[10]\n",
+      "\n",
+      "History\n",
+      "\n",
+      "Predecessor institutions\n",
+      "\n",
+      "The origins of Aston University are a School of Metallurgy formed in the Birmingham and Midland Institute in 1875. The Birmingham Municipal Technical School separated from the Institute in 1895, teaching chemistry, physics, metallurgy and electrical engineering. In 1911, commercial classes were introduced and grew into an independent School of Commerce by 1916.[11] The school changed its name in 1927 to the Birmingham Central Technical College,[11] to reflect its changing approach to teaching technology.\n",
+      "\n",
+      "In 1951, the Technical College was renamed the College of Technology, Birmingham[11] and work began on the Main Building at Gosta Green. In 1956, it became the first elite designated College of Advanced Technology and underwent a major expansion.[11] It moved into buildings that were constructed between 1949 and 1955 to a design by Ashley & Newman. Princess Margaret laid one of the first foundation stones at the base of the new building in 1951. The building is one of Europe's largest, freestanding brick buildings.[14][unreliable source?] In 1955, the College of Advanced Technology was opened by Her Majesty The Queen.[15] The college expanded again to a design by the City Architect of Birmingham Alwyn Sheppard Fidler between 1957 and 1965.[16]\n",
+      "\n",
+      "University status\n",
+      "\n",
+      "It officially became the University of Aston in Birmingham on receipt of its Royal Charter on 22 April 1966 and the first Chancellor of the University, Lord Nelson of Stafford, was installed on 10 May. The Charter of the University outlines objectives appropriate to a technological university: \"to advance, disseminate and apply learning and knowledge by teaching and research, for the benefit of industry and commerce and of the community generally: and to enable students to obtain the advantage of a university education, and such teaching and research may include periods outside the University in industry or commerce or wherever the University considers proper for the best advancement of its objects.\" The emphasis given to the sandwich course system, and the maintenance of strong links with industry, arises naturally from the institution's history. The motto of the University is the same as that of the City of Birmingham – Forward.[17]\n",
+      "\n",
+      "In 1983, Aston University, in partnership with Birmingham City Council and Lloyds Bank, established Birmingham Technology Ltd., which manages the Aston Science Park adjacent to the university site. The establishment of the Aston Science Park and Aston University's contribution to the city of Birmingham was fully recognised when the area was granted its own postal address \"The Aston Triangle\" in 1984, emphasising the campus as an official district of Birmingham. The logo of the establishment takes from the shape of the area.[18]\n",
+      "\n",
+      "2000 to present\n",
+      "\n",
+      "Aston University hosted the British Science Festival in September 2010, said to be Europe's largest public science event.[citation needed]\n",
+      "\n",
+      "Since May 2011, Sir John Sunderland has been the Chancellor of Aston University.\n",
+      "\n",
+      "The university is a lead sponsor of Aston University Engineering Academy, a university technical college (UTC) which opened in September 2012. The UTC is for students aged 14 to 19 wishing to pursue further study and careers in engineering, and is located at the edge of the Aston University campus.[19]\n",
+      "\n",
+      "In October 2014, Aston announced plans to launch Aston Medical School in October 2015.[20] The University also announced a £35 million cash injection for a major upgrade of the campus, including a new £19 million revamp of Aston Business School and improvement work to the Aston Institute of Photonic Technologies and the School of Languages and Social Sciences.[21]\n",
+      "\n",
+      "In February 2017, Aston University launched its online programme website. Four of their MSc programmes are offered 100% online to students in the UK and worldwide, including the Aston Business School's MBA.[citation needed]\n",
+      "\n",
+      "In July 2017, Aston became the first University in the UK to have degree apprenticeship graduates.[22][23] Aston began working in close partnership with Capgemini, to create the first degree apprenticeship: Digital and Technology Solutions in 2012.[24]\n",
+      "\n",
+      "\n"
+     ]
+    }
+   ],
+   "source": [
+    "'''\n",
+    "1. Reads the contents of \"aston.txt\" (please see the attachment)\n",
+    "'''\n",
+    "\n",
+    "reader = open(\"aston.txt\", \"r\")  # opening the file aston.txt \n",
+    "contents = reader.read()         # reading the content \n",
+    "print(contents)                  # Print the contents variable to read the file's contents\n",
+    "reader.close()                   # close the file \n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 8,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "LIST OF UNIQUE WORDS: ['aston', 'university', 'is', 'a', 'public', 'research', 'situated', 'in', 'the', 'city', 'centre', 'of', 'birmingham', 'england', 'began', 'as', 'municipal', 'technical', 'school', '1895', 'evolving', 'into', \"uk's\", 'first', 'college', 'advanced', 'technology', '1956', '5', 'received', 'its', 'royal', 'charter', 'from', 'queen', 'elizabeth', 'ii', 'on', '22', 'april', '1966', '2017', 'recognition', 'times', 'higher', 'education', 'for', 'second', 'best', 'teaching', 'quality', 'uk', '6', '2018', 'it', 'was', 'ranked', 'top', '55', 'universities', 'by', 'all', 'major', 'domestic', 'and', 'international', 'league', 'tables', 'qs', '42nd', 'world', 'under', '50', 'years', 'old', '2015', 'pioneered', 'integrated', 'placement', 'year', 'concept', 'over', 'ago', '7', '8', '9', 'with', 'more', 'than', '70', 'students', 'taking', 'highest', 'percentage', '10', 'history', 'predecessor', 'institutions', 'origins', 'are', 'metallurgy', 'formed', 'midland', 'institute', '1875', 'separated', 'chemistry', 'physics', 'electrical', 'engineering', '1911', 'commercial', 'classes', 'were', 'introduced', 'grew', 'an', 'independent', 'commerce', '1916', '11', 'changed', 'name', '1927', 'to', 'central', 'reflect', 'changing', 'approach', '1951', 'renamed', 'work', 'main', 'building', 'at', 'gosta', 'green', 'became', 'elite', 'designated', 'underwent', 'expansion', 'moved', 'buildings', 'that', 'constructed', 'between', '1949', '1955', 'design', 'ashley', 'newman', 'princess', 'margaret', 'laid', 'one', 'foundation', 'stones', 'base', 'new', \"europe's\", 'largest', 'freestanding', 'brick', '14', 'unreliable', 'source', 'opened', 'her', 'majesty', '15', 'expanded', 'again', 'architect', 'alwyn', 'sheppard', 'fidler', '1957', '1965', '16', 'status', 'officially', 'receipt', 'chancellor', 'lord', 'nelson', 'stafford', 'installed', 'may', 'outlines', 'objectives', 'appropriate', 'technological', '\"to', 'advance', 'disseminate', 'apply', 'learning', 'knowledge', 'benefit', 'industry', 'community', 'generally', 'enable', 'obtain', 'advantage', 'such', 'include', 'periods', 'outside', 'or', 'wherever', 'considers', 'proper', 'advancement', 'objects', '\"', 'emphasis', 'given', 'sandwich', 'course', 'system', 'maintenance', 'strong', 'links', 'arises', 'naturally', \"institution's\", 'motto', 'same', '–', 'forward', '17', '1983', 'partnership', 'council', 'lloyds', 'bank', 'established', 'ltd', 'which', 'manages', 'science', 'park', 'adjacent', 'site', 'establishment', \"university's\", 'contribution', 'fully', 'recognised', 'when', 'area', 'granted', 'own', 'postal', 'address', '\"the', 'triangle\"', '1984', 'emphasising', 'campus', 'official', 'district', 'logo', 'takes', 'shape', '18', '2000', 'present', 'hosted', 'british', 'festival', 'september', '2010', 'said', 'be', 'event', 'citation', 'needed', 'since', '2011', 'sir', 'john', 'sunderland', 'has', 'been', 'lead', 'sponsor', 'academy', 'utc', '2012', 'aged', '19', 'wishing', 'pursue', 'further', 'study', 'careers', 'located', 'edge', 'october', '2014', 'announced', 'plans', 'launch', 'medical', '20', 'also', '£35', 'million', 'cash', 'injection', 'upgrade', 'including', '£19', 'revamp', 'business', 'improvement', 'photonic', 'technologies', 'languages', 'social', 'sciences', '21', 'february', 'launched', 'online', 'programme', 'website', 'four', 'their', 'msc', 'programmes', 'offered', '100', 'worldwide', \"school's\", 'mba', 'july', 'have', 'degree', 'apprenticeship', 'graduates', '23', 'working', 'close', 'capgemini', 'create', 'digital', 'solutions', '24']\n",
+      "THERE ARE 352 UNIQUE WORDS\n"
+     ]
+    }
+   ],
+   "source": [
+    "'''\n",
+    "2. Finds all unique words from the file, that is, a list of all words that appeared at least once in the text. \n",
+    "For example, in \"This is a cat and this is a dog\", the unique words are: \"this\", \"is\", \"a\", \"cat\", \"and\", \"dog\". \n",
+    "'''\n",
+    "\n",
+    "with open(\"aston.txt\") as f:           # open the aston.txt file as f\n",
+    "    file = f.read()                    # store the content in the content variable\n",
+    "\n",
+    "punctuations = str.maketrans('!()-[]{};:\\,<>./?@#$%^&*_~', 26*' ')   # creating the punctuation variable which\n",
+    "                                                                     # include all possible punctuation\n",
+    "\n",
+    "split_words = file.translate(punctuations).lower().split()  # take the file we opened before that contains the text; \n",
+    "                                                            # check if there are punctuation in it and delete them; \n",
+    "                                                            # lower the text case; put each single words in a list  \n",
+    "                                                                      \n",
+    "\n",
+    "unique_Words = []                    # creating an empty list where to put all the unique words of the text \n",
+    "    \n",
+    "for line in split_words:             # iterate over each line in split_words \n",
+    "    line = line.strip()              # remove spaces, tabs, new line characters from both side of the string \n",
+    "        \n",
+    "    list = line.split(\" \")           # Split the string and return a list \n",
+    "        \n",
+    "    for i in list:                   # Itarate all the words inside list \n",
+    "        if i not in unique_Words:    # If the word we are iterating on is not in the list \n",
+    "            unique_Words.append(i)   # add that word to the list \n",
+    "\n",
+    "print(f\"LIST OF UNIQUE WORDS: {unique_Words}\")       # Print the list of unique words in the file           \n",
+    "\n",
+    "print(f\"THERE ARE {len(unique_Words)} UNIQUE WORDS\")  # print how many unique words there are in the file \n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 9,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "'''\n",
+    "3. Prints them to a file called \"unique_words.txt\", sorted alphabetically\n",
+    "'''\n",
+    "\n",
+    "with open(\"unique_words.txt\", \"w\") as writer:    # write the file unique_words.txt\n",
+    "    for item in sorted(unique_Words):            # iterate over the uniqueWords list sorting out each value \n",
+    "        writer.write(\"%s\\n\" % item)              # convert it as a string and save it  \n",
+    "        "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 10,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "The longest words in the file is: ['apprenticeship']\n"
+     ]
+    }
+   ],
+   "source": [
+    "'''\n",
+    "4. Finds the longest word in the file and prints it to the screen\n",
+    "'''\n",
+    "\n",
+    "with open(\"unique_words.txt\", 'r') as f:           # open the file \n",
+    "    all_words = f.read().split()                   # read the file and pur each words in a list \n",
+    "    \n",
+    "    max_len = len(max(all_words, key=len))         # store in a variable the number of characters in the longest word \n",
+    "    \n",
+    "    longest_word = [x for x in all_words if len(x) == max_len]   # iterate over each words in \"all_words\" and  \n",
+    "                                                                 # find the word that has the max characters, store it in \"longest_word\" \n",
+    "print(f\"The longest words in the file is: {longest_word}\")       # print the longest word \n",
+    "\n"
+   ]
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.8.3"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 4
+}
